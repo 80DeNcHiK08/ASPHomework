@@ -28,6 +28,10 @@ body {
     margin: 15px;
 }
 
+form {
+    margin: 10px 0;
+}
+
 /* Hide/rearrange for smaller screens */
 @media screen and (max-width: 767px) {
     /* Hide captions */

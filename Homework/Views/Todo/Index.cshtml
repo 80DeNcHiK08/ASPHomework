@@ -5,17 +5,21 @@
 
 <h2>Index</h2>
 
+<p>Click here to see all tasks</p>
 <a asp-action="GetAll" asp-controller="Todo" method="POST">GetAll</a>
+<p>Type name and click 'Create' to create new task</p>
 <form asp-action="Create" asp-controller="Todo">
     <input type="text" name="Name" />
     <input type="checkbox" name="IsCompleted" />
     <input type="submit" value="Create" />
 </form>
+<p>Type existing item id in first field, then new task name to the second, and click 'Update' to update task name</p>
 <form asp-action="Update" asp-controller="Todo" method="Post">
     <input type="text" name="id" />
     <input type="text" name="Name" />
     <input type="submit" value="Update" />
 </form>
+<p>Type existing item id and click 'Delete' to delete item</p>
 <form asp-action="Delete" asp-controller="Todo" method="Post">
     <input type="text" name="id" />
     <input type="submit" value="Delete" />

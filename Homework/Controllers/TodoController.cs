@@ -39,23 +39,22 @@ namespace Homework.Controllers
 
         public IActionResult Update(string id, string Name)
         {
-            TodoItem item = new TodoItem { TodoName = Name, IsComplete = false };
-            if (item == null || item.TodoId != id)
+            TodoItem item = TodoItems.Find(id);
+            if (item == null)
             {
-                //return BadRequest();
+                return BadRequest();
             }
 
-            var todo = TodoItems.Find(id);
+            var todo = TodoItems.Find(item.TodoId);
             if (todo == null)
             {
                 return NotFound();
             }
 
-            TodoItems.Update(item);
+            TodoItems.Update(todo, Name);
             return new NoContentResult();
         }
 
-        //[HttpDelete]
         public IActionResult Delete(string id)
         {
             var todo = TodoItems.Find(id);

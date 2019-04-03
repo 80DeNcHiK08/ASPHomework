@@ -60,10 +60,14 @@ namespace Homework.Models
             return item;
         }
 
-        public void Update(TodoItem item)
+        public void Update(TodoItem item, string Name)
         {
             _todos[item.TodoId] = item;
-            var updatedstr = GetJson(path).Replace(_todos[item.TodoId].TodoId, item.TodoId);
+            var updatedstr = GetJson(path).Replace(_todos[item.TodoId].TodoName, Name);
+            using (StreamWriter sw = new StreamWriter(path))
+            {
+                sw.WriteLine(updatedstr + "\n");
+            }
         }
 
         public static string GetJson(string path)

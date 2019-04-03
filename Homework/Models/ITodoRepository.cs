@@ -11,6 +11,6 @@ namespace Homework.Models
         IEnumerable<TodoItem> GetAll();
         TodoItem Find(string id);
         TodoItem Remove(string id);
-        void Update(TodoItem item);
+        void Update(TodoItem item, string Name);
     }
 }
